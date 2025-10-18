@@ -1,0 +1,44 @@
+### many c programs
+Miscellanea of application
+###
+plot a file with
+`./cmd`
+
+ascii.c
+binfile.c
+binsearch.c
+bitcount.c
+countchar.c
+dyn2Darr1.c
+dyn2Darr2.c
+dyn2Darr3.c
+dyn2Darray.c
+escape.c
+fun1.c
+getbits.c
+helloclang.c
+malloc1.c
+malloc2D.c
+maxline.c
+myatoi.c
+read2Darr.c
+readbin.c
+readbin2Darr.c
+readcsv.c
+readcsv1.c
+readpackets.c
+readpackets2.c
+reverse.c
+reverses.c
+shellsort.c
+squeeze.c
+strtodex1.c
+temp.c
+test.c
+testmal.c
+teststr1.c
+timex1.c
+timex2.c
+utils.c
+writeArray2D.c
+writepackets.c
