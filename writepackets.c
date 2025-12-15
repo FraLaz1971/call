@@ -3,7 +3,7 @@
 #include<string.h>
 #include<math.h>
 #include "packets.h"
-#define MAXDIM 10000
+#define MAXDIM 100
 int main(int argc, char **argv) {
    unsigned short int word[NMAX];
    unsigned short int hword[9];
@@ -15,6 +15,10 @@ int main(int argc, char **argv) {
    struct Packet wpkt[MAXDIM];
    struct DDSheader dhd[MAXDIM];
    unsigned char mybyte=255;
+   if(argc<3){
+     fprintf(stderr,"usage:%s <npackets> <outfile.dds>\n",argv[0]);
+     return 1;
+   }
    // Open the binary file for writing
    npkt=atoi(argv[1]);
    fname=argv[2];
