@@ -2,7 +2,8 @@
 unsigned short getbits(unsigned short x, int p, int n);
 int main(){
   unsigned short x,x1;
-  x=0b1000000011000001;
+/*  x=0b1000000011000001; */
+  x=32961;
   x1=getbits(x,7,2);
   printf("%d\n",x1);
   x1=getbits(x,15,1);

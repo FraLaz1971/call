@@ -8,6 +8,7 @@ int main() {
     int debug=1;
     size_t res;
    // Open the binary file for reading
+   struct Packet rpkt[NMAX];
    FILE *wf = fopen("packets.ccsds", "rb");
 
    // Check if file open successfully
@@ -17,7 +18,6 @@ int main() {
    }
 
    // Read packet data from the file
-   struct Packet rpkt[NMAX];
    npkt=0;
 while (npkt<NMAX){
         if(debug) printf("reading packet n.%d\n",npkt);

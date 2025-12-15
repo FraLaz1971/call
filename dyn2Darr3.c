@@ -1,13 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAXDIM 10000
 int main(int argc, char** argv){
+  int i, j;
+  int m,n;
+  int *matr[MAXDIM];
+  int **matrp;
   if(argc<3){
     fprintf(stderr,"usage:%s <nrows> <ncols>\n",argv[0]);
     return 1;
   }
-  int i, j;
-  int m=atoi(argv[1]), n=atoi(argv[2]);
-  int *matr[n];
+  m=atoi(argv[1]); n=atoi(argv[2]);
+  matrp=(int **)realloc(matr,m*sizeof(int *)) ;
   for(i=0;i<m;i++)
      matr[i]=malloc(n*sizeof(int));
   for (i=0;i<m;i++) 

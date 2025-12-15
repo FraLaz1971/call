@@ -3,16 +3,22 @@
 #include<string.h>
 #include<math.h>
 #include "packets.h"
+#define MAXDIM 10000
 int main(int argc, char **argv) {
    unsigned short int word[NMAX];
    unsigned short int hword[9];
-   int npkt=atoi(argv[1]);
-   char *fname=argv[2];
-   int length=atoi(argv[3]);
+   int npkt;
+   char *fname;
+   int length;
    int i,j,k;
+   FILE *wf;
+   struct Packet wpkt[MAXDIM];
+   struct DDSheader dhd[MAXDIM];
    unsigned char mybyte=255;
    // Open the binary file for writing
-   FILE *wf = fopen(fname, "wb");
+   npkt=atoi(argv[1]);
+   fname=argv[2];
+   wf = fopen(fname, "wb");
 
    // Check if file open successfully
    if (!wf) {
@@ -21,8 +27,6 @@ int main(int argc, char **argv) {
    }
 
    // Initialize packet data
-   struct Packet wpkt[npkt];
-   struct DDSheader dhd[npkt];
    for (i=0;i<npkt;i++){
    dhd[i].sec_msb=0;
    dhd[i].sec_lsb=i+1;

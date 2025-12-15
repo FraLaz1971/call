@@ -4,6 +4,7 @@
 int main(int argc, char **argv){
   int n;
   FILE *fp;
+  struct contact mycont[100];
   printf("n. arguments:%d\n",argc);
   for(n=0;n<argc;n++){
     printf("argv[%d]=%s\n",n,argv[n]);
@@ -17,7 +18,6 @@ int main(int argc, char **argv){
       }
   fclose(fp);
   printf("file myclang.txt created\n");
- struct contact mycont[100];
  load_contact(mycont);
  print_contact(mycont);
   return 0;

@@ -1,0 +1,183 @@
+SHELL=/usr/bin/env bash
+CC=cl
+LD=link
+CFLAGS=
+LDFLAGS=
+EEXT=.exe
+OEXT=.obj
+RM=del /Q /F
+all:	readbin2Darr$(EEXT) readbin$(EEXT) utils$(OEXT) helloclang$(EEXT) binfile$(EEXT) fun1$(OEXT) readcsv$(EEXT) \
+	malloc2D$(EEXT) writeArray2D$(EEXT) limits$(EEXT) ascii$(EEXT) binfile$(EEXT) binsearch$(EEXT) bitcount$(EEXT) \
+	countchar$(EEXT) dyn2Darr1$(EEXT) dyn2Darr2$(EEXT) dyn2Darr3$(EEXT) dyn2Darray$(EEXT) escape$(EEXT) extern$(EEXT) \
+	getbits$(EEXT)  malloc1$(EEXT) maxline$(EEXT) myatoi$(EEXT) read2Darr$(EEXT) readbin2Darr$(EEXT) \
+	readcsv1$(EEXT) readpackets$(EEXT) readpackets2$(EEXT) reverse$(EEXT) reverses$(EEXT) rfact$(EEXT) \
+	shellsort$(EEXT)  squeeze$(EEXT) src$(OEXT) strtodex1$(EEXT) t1$(EEXT) temp$(EEXT) test$(EEXT) testmal$(EEXT) \
+	teststr1$(EEXT) timex1$(EEXT) timex2$(EEXT) writeArray2D$(EEXT) writepackets$(EEXT)
+ascii$(OEXT): ascii.c
+	$(CC) $(CFLAGS) $?
+binsearch$(OEXT): binsearch.c
+	$(CC) $(CFLAGS) $?
+bitcount$(OEXT): bitcount.c
+	$(CC) $(CFLAGS) $?
+countchar$(OEXT): countchar.c
+	$(CC) $(CFLAGS) $?
+dyn2Darr1$(OEXT): dyn2Darr1.c
+	$(CC) $(CFLAGS) $?
+dyn2Darr2$(OEXT): dyn2Darr2.c
+	$(CC) $(CFLAGS) $?
+dyn2Darr3$(OEXT): dyn2Darr3.c
+	$(CC) $(CFLAGS) $?
+dyn2Darray$(OEXT): dyn2Darray.c
+	$(CC) $(CFLAGS) $?
+escape$(OEXT): escape.c
+	$(CC) $(CFLAGS) $?
+extern$(OEXT): extern.c
+	$(CC) $(CFLAGS) $?
+getbits$(OEXT): getbits.c
+	$(CC) $(CFLAGS) $?
+malloc1$(OEXT): malloc1.c
+	$(CC) $(CFLAGS) $?
+maxline$(OEXT): maxline.c
+	$(CC) $(CFLAGS) $?
+myatoi$(OEXT): myatoi.c
+	$(CC) $(CFLAGS) $?
+read2Darr$(OEXT): read2Darr.c
+	$(CC) $(CFLAGS) $?
+readbin$(OEXT): readbin.c
+	$(CC) $(CFLAGS) $?
+readbin2Darr$(OEXT): readbin2Darr.c
+	$(CC) $(CFLAGS) $?
+readcsv1$(OEXT): readcsv1.c
+	$(CC) $(CFLAGS) $?
+readpackets$(OEXT): readpackets.c
+	$(CC) $(CFLAGS) $?
+readpackets2$(OEXT): readpackets2.c
+	$(CC) $(CFLAGS) $?
+reverse$(OEXT): reverse.c
+	$(CC) $(CFLAGS) $?
+reverses$(OEXT): reverses.c
+	$(CC) $(CFLAGS) $?
+rfact$(OEXT): rfact.c
+	$(CC) $(CFLAGS) $?
+shellsort$(OEXT): shellsort.c
+	$(CC) $(CFLAGS) $?
+squeeze$(OEXT): squeeze.c
+	$(CC) $(CFLAGS) $?
+src$(OEXT): src.c
+	$(CC) $(CFLAGS) $?
+strtodex1$(OEXT): strtodex1.c
+	$(CC) $(CFLAGS) $?
+t1$(OEXT): t1.c
+	$(CC) $(CFLAGS) $?
+temp$(OEXT): temp.c
+	$(CC) $(CFLAGS) $?
+test$(OEXT): test.c
+	$(CC) $(CFLAGS) $?
+testmal$(OEXT): testmal.c
+	$(CC) $(CFLAGS) $?
+teststr1$(OEXT): teststr1.c
+	$(CC) $(CFLAGS) $?
+timex1$(OEXT): timex1.c
+	$(CC) $(CFLAGS) $?
+timex2$(OEXT): timex2.c
+	$(CC) $(CFLAGS) $?
+utils$(OEXT): utils.c
+	$(CC) $(CFLAGS) $?
+writepackets$(OEXT): writepackets.c
+	$(CC) $(CFLAGS) $?
+helloclang$(OEXT): helloclang.c
+	$(CC) $(CFLAGS) $? 
+limits$(OEXT): limits.c
+	$(CC) $(CFLAGS) $? 
+readcvs$(OEXT): readcvs.c
+	$(CC) $(CFLAGS) $? 
+binfile: binfile.c
+	$(CC) $(CFLAGS) $? 
+writeArray2D$(OEXT): writeArray2D.c
+	$(CC) $(CFLAGS) $? 
+malloc2D$(OEXT): malloc2D.c
+	$(CC) $(CFLAGS) $? 
+fun1$(OEXT): fun1.c 
+	$(CC) $(CFLAGS) $? 
+helloclang$(EEXT): helloclang$(OEXT) fun1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+read2Darr$(EEXT): read2Darr$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readbin$(EEXT): readbin$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readbin2Darr$(EEXT): readbin2Darr$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readcsv$(EEXT): readcsv$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+limits$(EEXT): limits$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+malloc2D$(EEXT): malloc2D$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+writeArray2D$(EEXT): writeArray2D$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+ascii$(EEXT): ascii$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+binsearch$(EEXT): binsearch$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+bitcount$(EEXT): bitcount$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+countchar$(EEXT): countchar$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+dyn2Darr1$(EEXT): dyn2Darr1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+dyn2Darr2$(EEXT): dyn2Darr2$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+dyn2Darr3$(EEXT): dyn2Darr3$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+dyn2Darray$(EEXT): dyn2Darray$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+escape$(EEXT): escape$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+extern$(EEXT): extern$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+getbits$(EEXT): getbits$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+malloc1$(EEXT): malloc1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+maxline$(EEXT): maxline$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+myatoi$(EEXT): myatoi$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readcsv1$(EEXT): readcsv1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readpackets$(EEXT): readpackets$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+readpackets2$(EEXT): readpackets2$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+reverse$(EEXT): reverse$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+reverses$(EEXT): reverses$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+rfact$(EEXT): rfact$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+shellsort$(EEXT): shellsort$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+squeeze$(EEXT): squeeze$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+strtodex1$(EEXT): strtodex1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+t1$(EEXT): t1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+temp$(EEXT): temp$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+test$(EEXT): test$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+testmal$(EEXT): testmal$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+teststr1$(EEXT): teststr1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+timex1$(EEXT): timex1$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+timex2$(EEXT): timex2$(OEXT)
+	$(LD) $**  $(LDFLAGS)
+clean:
+	$(RM) readbin2Darr$(EEXT) readbin$(EEXT) utils$(OEXT) helloclang$(EEXT) binfile$(EEXT) fun1$(OEXT) readcsv$(EEXT) \ malloc2D$(EEXT) *$(OEXT) limits$(EEXT) writeArray2D$(EEXT) ascii$(EEXT) binfile$(EEXT) binsearch$(EEXT) bitcount$(EEXT) \
+	countchar$(EEXT) dyn2Darr1$(EEXT) dyn2Darr2$(EEXT) dyn2Darr3$(EEXT) dyn2Darray$(EEXT) escape$(EEXT) extern$(EEXT) \
+	getbits$(EEXT)  malloc1$(EEXT) maxline$(EEXT) myatoi$(EEXT) read2Darr$(EEXT) readbin2Darr$(EEXT) \
+	readcsv1$(EEXT) readpackets$(EEXT) readpackets2$(EEXT) reverse$(EEXT) reverses$(EEXT) rfact$(EEXT) shellsort$(EEXT) \ squeeze$(EEXT) strtodex1$(EEXT) t1$(EEXT) temp$(EEXT) test$(EEXT) testmal$(EEXT) teststr1$(EEXT) \
+	timex1$(EEXT) timex2$(EEXT)  writeArray2D$(EEXT) writepackets$(EEXT)

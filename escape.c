@@ -15,7 +15,8 @@ int main(int argc, char **argv){
   int  res;
   size_t linelen=1024;
   line=(char *)malloc(linelen*sizeof(char));
-  while(getline(&line,&linelen,stdin)>0){
+
+  while(fgets(&line,linelen,stdin)>0){
     res=escape((char *)s,line);
     printf("s: %s t: %s\n",s,line);
   }

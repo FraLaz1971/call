@@ -9,14 +9,16 @@ int main(int argc, char **argv) {
     int i,j,nbytes;
     int debug=1;
     size_t res;
+    char *fname;
+   FILE *wf;
     if(argc<2){
       fprintf(stderr,"usage:%s <file.row>\n>",argv[0]);
       return 1;
     }
-    char *fname=argv[1];
+    fname=argv[1];
     buffer = malloc(MAXBYTES*sizeof(char));
    // Open the binary file for reading
-   FILE *wf = fopen(fname, "rb");
+   wf = fopen(fname, "rb");
 
    // Check if file open successfully
    if (!wf) {

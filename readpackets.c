@@ -9,7 +9,10 @@ struct Student {
 };
 
 int main() {
+   int i;
    // Open the binary file for writing
+   struct Student wstu[3];
+   struct Student rstu[3];
    FILE *wf = fopen("student.dat", "wb");
    
    // Check if file open successfully
@@ -19,7 +22,6 @@ int main() {
    }
 
    // Initialize student data
-   struct Student wstu[3];
    wstu[0].roll_no = 1;
    strcpy(wstu[0].name, "Ram");
    wstu[1].roll_no = 2;
@@ -28,7 +30,7 @@ int main() {
    strcpy(wstu[2].name, "Madhu");
 
    // Write student data to the file
-   for (int i = 0; i < 3; i++)
+   for (i = 0; i < 3; i++)
        fwrite(&wstu[i], sizeof(struct Student), 1, wf);
 
    // Close the file after writing
@@ -44,8 +46,7 @@ int main() {
    }
 
    // Read student data from the file
-   struct Student rstu[3];
-   for (int i = 0; i < 3; i++)
+   for (i = 0; i < 3; i++)
        fread(&rstu[i], sizeof(struct Student), 1, wf);
 
    // Close the file after reading
@@ -53,7 +54,7 @@ int main() {
 
    // Display student details
    printf("Students Details:\n");
-   for (int i = 0; i < 3; i++) {
+   for (i = 0; i < 3; i++) {
        printf("Roll No: %d\n", rstu[i].roll_no);
        printf("Name: %s\n", rstu[i].name);
        printf("\n");

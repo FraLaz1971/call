@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h> 
 #define MAXDIM 2000
+#if defined (_MSC_VER) && (_MSC_VER < 1900)
+#define snprintf _snprintf
+#endif
 int main(){
   char tempn[MAXDIM][64];
   char part1[28];

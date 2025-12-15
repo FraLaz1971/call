@@ -13,7 +13,7 @@ int main(int argc, char **argv){
     printf("usage: %s <filename>\n",argv[0]);
     return 1;
   }*/
-  while (getline(&line,&linelen,stdin)>0){
+  while (fgets(&line,linelen,stdin)>0){
     res=reverse(line);
     printf("%s\n",line);
   }
