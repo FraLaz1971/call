@@ -1,0 +1,41 @@
+CC=wcc386
+LD=wlink
+CFLAGS=-I=./
+OEXT=.o
+EEXT=
+RM=rm -rf
+LDFLAGS=system linux
+LIBS=
+CSRCS=ascii.c binfile.c binsearch.c bitcount.c countchar.c dyn2Darr1.c dyn2Darr2.c dyn2Darr3.c dyn2Darray.c \
+	escape.c extern.c getbits.c helloclang.c limits.c malloc1.c malloc2D.c maxline.c myatoi.c read2Darr.c \
+	readbin.c readbin2Darr.c readcsv.c readcsv1.c readpackets.c readpackets2.c reverse.c reverses.c \
+	rfact.c shellsort.c squeeze.c src.c strtodex1.c t1.c temp.c test.c testmal.c teststr1.c timex1.c timex2.c \
+	writeArray2D.c writepackets.c
+
+COBJS = $(CSRCS:.c=$(OEXT)) fun1.o utils.o
+
+TARGETS = $(COBJS:$(OEXT)=$(EEXT))
+.PHONY: all clean
+
+all: $(COBJS) $(TARGETS)
+
+fun1$(OEXT): fun1.c
+	$(CC)  $(CFLAGS) -fo=$@ $<
+
+utils$(OEXT): utils.c
+	$(CC)  $(CFLAGS) -fo=$@ $<
+
+.o$(EEXT):
+	$(LD) name $@ file $^ $(LDFLAGS) $(LIBS)
+#wlink name hello file hello.o system linux
+
+.c.o:
+	$(CC)  $(CFLAGS) -fo=$@ $<
+#wcc386 -fo=limits.o limits.c
+
+helloclang$(EEXT): helloclang$(OEXT)
+	$(LD) name $@ file $< file fun1$(OEXT) $(LDFLAGS) $(LIBS)
+
+clean:
+	$(RM) $(COBJS) $(TARGETS) *.err
+

@@ -5,8 +5,10 @@ CFLAGS=-c
 LDFLAGS=
 RM=rm -f
 .PHONY: all clean
-all:	readbin2Darr readbin utils.o helloclang binfile fun1.o readcsv malloc2D writeArray2D
+all:	readbin2Darr readbin utils.o helloclang binfile fun1.o readcsv malloc2D writeArray2D limits.c
 helloclang.o: helloclang.c
+	$(CC) $(CFLAGS) $< -o $@
+limits.o: limits.c
 	$(CC) $(CFLAGS) $< -o $@
 read2Darr.o: read2Darr.c
 	$(CC) $(CFLAGS) $< -o $@
@@ -35,6 +37,8 @@ readbin: readbin.o
 readbin2Darr: readbin2Darr.o
 	$(LD) $^ -o $@ $(LDFLAGS)
 readcsv: readcsv.o
+	$(LD) $^ -o $@ $(LDFLAGS)
+limits: limits.o
 	$(LD) $^ -o $@ $(LDFLAGS)
 malloc2D: malloc2D.o
 	$(LD) $^ -o $@ $(LDFLAGS)

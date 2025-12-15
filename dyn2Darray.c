@@ -4,7 +4,7 @@
 int main(int argc,char **argv){
   int i,j;
   int m, n;
-  int (*matr)[MAXDIM]=(int **)malloc(MAXDIM*MAXDIM*sizeof(int));
+  int (*matr)[MAXDIM]=malloc(MAXDIM*MAXDIM*sizeof(int));
   int **matrp;
   if(argc<3){
     printf("usage: %s <m> <n>\n",argv[0]);

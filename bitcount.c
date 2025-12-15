@@ -12,6 +12,7 @@ int main(int argc,char **argv){
   x=atoi(argv[1]);
   b=bitcount(x);
   printf("%hu contained %d 1\n",x,b);
+  return 0;
 }
 int bitcount(unsigned short x)
 {
